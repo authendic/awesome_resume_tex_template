@@ -1,0 +1,32 @@
+name: GitHub Actions Resume
+on: 
+  push:
+    # Sequence of patterns matched against refs/tags
+    tags:
+      - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
+
+jobs:
+  ResumeBuild:
+    runs-on: docker.io/pandoc/latex
+    steps:
+      - run: apt update
+      - run: apt install fonts-wqy-microhei
+      - run: curl -fLo- https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet/update-tlmgr-latest.sh|sudo sh
+      - run: tlmgr install titlesec enumitem fontawesome xifthen nth xltxtra
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - run: pandoc --defaults default.yaml
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          body: |
+            Changes in this Release
+            - First Change
+            - Second Change
+          draft: false
+          prerelease: false
