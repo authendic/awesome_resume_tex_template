@@ -35,7 +35,7 @@ $endfor$
 
 \section{\faBuilding\ 工作经历}
     $for(工作经历)$
-    \datedsubsection{\textbf{$工作经历.公司$}，$工作经历.城市$ \ $工作经历.岗位$ }%
+    \datedsubsection{\textbf{$工作经历.单位$}，$工作经历.城市$ \ $工作经历.岗位$ }%
     {$工作经历.时间$} 
     $endfor$
 
