@@ -1,0 +1,11 @@
+texmf
+update-tlmgr-latest.sh
+*.log
+*.aux
+*.dvi
+*.pdf
+*.glo
+*.hd
+*.idx
+*.out
+.uuid

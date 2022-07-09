@@ -1,0 +1,12 @@
+from: gfm
+to: pdf
+standalone: true
+pdf-engine: lualatex
+output-file: resume.pdf
+log-file: ./pandoc.log
+#verbosity: INFO
+input-file: "/dev/null"
+template: resume.latex
+metadata:
+  mainfont: WenQuanYi Micro Hei
+metadata-file: resume.yaml

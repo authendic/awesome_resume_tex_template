@@ -1,0 +1,70 @@
+\documentclass{resume}
+\setmainfont{$mainfont$}
+\name{$个人信息.名$}%
+    {$个人信息.姓$}
+    $if(个人信息.性别.男)$
+\gendermale
+    $endif$
+    $if(个人信息.性别.女)$
+\genderfemale
+    $endif$
+\birthday{$个人信息.生日$}
+\email{$个人信息.邮箱$}
+\phone{$个人信息.手机$}
+\wechat{$个人信息.微信$}
+\objective{$求职意向$}
+
+
+\begin{document}
+\makecvtitle
+
+\section{\faGraduationCap\ 教育经历}
+$for(教育经历)$
+\datedsubsection{\textbf{$教育经历.学校$}\ $教育经历.城市$}{2005.09 - 2009.07}
+    $if(教育经历.学历)$
+专业: $教育经历.专业$ \ $教育经历.学历$
+$   endif$
+$endfor$
+
+\section{\faCogs\ 技术技能}
+\begin{itemize}[parsep=0.5ex,label={\faCheck}] 
+    $for(专业技能)$
+        \item $专业技能$
+    $endfor$
+\end{itemize}
+
+\section{\faBuilding\ 工作经历}
+    $for(工作经历)$
+    \datedsubsection{\textbf{$工作经历.公司$}，$工作经历.城市$ \ $工作经历.岗位$ }%
+    {$工作经历.时间$} 
+    $endfor$
+
+
+\section{\faThumbsOUp\ 项目经历}
+\begin{itemize}[label={\faHandORight}]
+  \setlength\itemsep{1em}
+
+$for(项目经历)$
+
+  \item $项目经历.项目名$ \ {\bf $项目经历.公司$}
+  \begin{itemize}[leftmargin=5em]
+    \setlength\itemsep{0.5em}
+    $if(项目经历.角色)$
+    \item[项目角色:] $项目经历.角色$
+    $endif$
+    $if(项目经历.介绍)$
+    \item[项目介绍:] $项目经历.介绍$
+    $endif$
+    $if(项目经历.职责)$
+    \item[项目职责:] $项目经历.职责$
+    $endif$
+    $if(项目经历.价值)$
+    \item[项目价值:] $项目经历.价值$
+    $endif$
+  \end{itemize}
+
+$endfor$
+
+\end{itemize}
+
+\end{document}
