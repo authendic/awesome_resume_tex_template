@@ -1,5 +1,5 @@
 \documentclass{resume}
-\setmainfont{$mainfont$}
+% \setmainfont{$mainfont$}
 \name{$个人信息.名$}%
     {$个人信息.姓$}
     $if(个人信息.性别.男)$
@@ -35,7 +35,7 @@ $endfor$
 
 \section{\faBuilding\ 工作经历}
     $for(工作经历)$
-    \datedsubsection{\textbf{$工作经历.单位$}，$工作经历.城市$ \ $工作经历.岗位$ }%
+    \datedsubsection{\textbf{$工作经历.单位$} (@  $工作经历.城市$ )\ $工作经历.岗位$ }%
     {$工作经历.时间$} 
     $endfor$
 

@@ -9,3 +9,4 @@ update-tlmgr-latest.sh
 *.idx
 *.out
 .uuid
+.texlive*

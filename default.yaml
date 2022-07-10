@@ -1,7 +1,8 @@
 from: gfm
 to: pdf
 standalone: true
-pdf-engine: lualatex
+#pdf-engine: lualatex
+pdf-engine: xelatex
 output-file: resume.pdf
 log-file: ./pandoc.log
 #verbosity: INFO

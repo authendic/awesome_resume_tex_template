@@ -3,7 +3,8 @@
 
 \ProvidesClass{resume}[2015/05/25 An elegant Résumé class]
 
-\LoadClass[11pt]{article}
+% \LoadClass[a4paper, 11pt]{article}
+\LoadClass[11pt]{ctexart}
 \RequirePackage{fontspec}
 \pagestyle{plain}
 % Main document font
